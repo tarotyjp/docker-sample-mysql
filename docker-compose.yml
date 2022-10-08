@@ -1,0 +1,47 @@
+version: '3'
+
+services:
+  db:
+    build: docker/db
+    container_name: db
+    networks:
+      - app_network
+    environment:
+      MYSQL_HOST: db
+      MYSQL_DATABASE: employees
+      MYSQL_USER: learning_mysql
+      MYSQL_PASSWORD: learning_mysql
+      MYSQL_ROOT_PASSWORD: root
+    ports:
+      - "3306:3306"
+    working_dir: /var/mysql/learning
+    volumes:
+      - ./docker/db/log:/var/log/mysql
+      - mysql_volume:/var/lib/mysql
+      - ./src:/var/mysql
+    command: mysqld --slow_query_log=0
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    container_name: phpmyadmin
+    networks:
+      - app_network
+    environment:
+      - PMA_ARBITRARY=1
+      - PMA_HOST=db
+      - PMA_USER=root
+      - PMA_PASSWORD=root
+    links:
+      - db
+    ports:
+      - "8000:80"
+    volumes:
+      - /sessions
+    depends_on:
+      - db
+
+networks:
+  app_network:
+
+volumes:
+  mysql_volume:
+  mysql_volume_test:
