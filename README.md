@@ -64,6 +64,10 @@ https://github.com/tarotyjp/sample-series
 | current\_dept\_emp      |
 | dept\_emp\_latest\_date |
 
+ER図も出力したので、SQLを学習する際の参考にしてください。  
+![ER図](images/ERD.png)
+
+
 ### ご注意
 
 MySQLの公式サンプルではありますが、テーブル設計のサンプルとしてではなく、データの参照、追加、更新、削除を練習するためのサンプルとして学習するようにしましょう。
