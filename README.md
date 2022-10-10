@@ -44,7 +44,6 @@ https://github.com/tarotyjp/sample-series
 - [Other MySQL Documentation(英語)](https://dev.mysql.com/doc/index-other.html)
 - [今回利用するサンプルのGitHubリポジトリ(英語)](https://github.com/datacharmer/test_db)
 
-
 シェルが実行されると下記の通りテーブルが作成されます。
 
 | テーブル名                   | 説明          |
@@ -71,6 +70,9 @@ ER図も出力したので、SQLを学習する際の参考にしてください
 ### ご注意
 
 MySQLの公式サンプルではありますが、テーブル設計のサンプルとしてではなく、データの参照、追加、更新、削除を練習するためのサンプルとして学習するようにしましょう。
+
+また、このサンプルはWindows環境で作成しており、Macでの動作確認はしておりません。  
+そのため、とくにM1/M2シリーズのMacではエラーが発生する可能性もあります。  
 
 ## 利用されるバージョン
 
